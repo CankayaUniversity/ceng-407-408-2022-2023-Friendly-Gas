@@ -1,12 +1,12 @@
-//google api key: AIzaSyDU4iypBguH0ugeJirvXxkDdjopCLmIcX0
+//google api key: AIzaSyCxg3xSWMnHfCzALJa8I9et_QhFrkA85gc
 //google nearbt "https://maps.googleapis.com/maps/api/place/nearbysearch/json"+
 //                     "?location="+currentlat+","+currentlong+
 //                     "&radius="+radius+
 //                     "&types=benzin_istasyon" +
 //                     "&name="+places_array[i]+
 //                     "&key=AIzaSyDEEISUqJC-eJfNq_nvf1_P5n-qvjLh20E";
-const google_api_key = "AIzaSyDU4iypBguH0ugeJirvXxkDdjopCLmIcX0";
-const collect_api_key = "apikey 1SIhyB8Kcga3WwWtYzXrL6:66cRwFlk7mt4Jqc1I2EKHM";
+const google_api_key = "AIzaSyCxg3xSWMnHfCzALJa8I9et_QhFrkA85gc";
+const collect_api_key = "apikey 3zZNR9ranGaqJSyt6ysUSe:69eREieJENYyuqkM3kwbrl";
 var google_map = document.querySelector(".google_map")
 let map;
 var current_latitude;
@@ -32,7 +32,7 @@ async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
 
     map = new Map(document.getElementById("map"), {
-        center: {lat: current_latitude, lng: current_longitude},
+        center: {lat: parseFloat(current_latitude), lng: parseFloat(current_longitude)},
         zoom: 15,
     });
 
@@ -141,7 +141,7 @@ async function getNearby(lat, lng){
 
 
                     await $.ajax({
-                        url: 'https://api.collectapi.com/gasPrice/'+ gasTypeUrl +'?city=konya',
+                        url: 'https://api.collectapi.com/gasPrice/'+ gasTypeUrl +'?city=ankara',
                         headers: {
                             "authorization": collect_api_key,
                             "Content-Type": "application/json"
