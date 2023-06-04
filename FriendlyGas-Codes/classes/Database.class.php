@@ -8,7 +8,7 @@ class Database{
 
     private function ConnectDatabase(){
 
-            $servername = "sql934.main-hosting.eu";
+            $servername = "sql931.main-hosting.eu";
             $dbName = "u335195660_friendlygass";
             $username = "u335195660_friendlygass";
             $password = "FriendlyGas123.,!";
